@@ -112,6 +112,7 @@ from src.mockapp.main import greet
 import main
 ```
 
+<!--
 ## Setup command
 
 From the repository root:
@@ -135,6 +136,7 @@ From the repository root:
 ```bash
 python -m mockapp
 ```
+-->
 
 ## VS Code rules
 
@@ -156,6 +158,8 @@ Before running tests or modifying code, make sure the project has been installed
 python -m pip install -e ".[dev]"
 ```
 
+For further details, see the [Canonical logical commands](#canonical-logical-commands) section.
+
 After any code change, run:
 
 ```bash
@@ -163,3 +167,20 @@ python -m pytest
 ```
 
 Show the diff and the test result.
+
+For further details, see the [Canonical logical commands](#canonical-logical-commands) section.
+
+## <a id="canonical-logical-commands"></a>Canonical logical commands
+
+These are the logical project commands:
+
+```bash
+python -m pip install -e ".[dev]"
+python -m pytest
+python -m mockapp
+```
+
+They must be executed with the correct project interpreter for the current environment.
+
+In Codex inside VS Code on Windows, resolve python through .codex/config.toml / PROJECT_PYTHON.
+In Codex cloud, use the Python runtime selected in the Codex cloud environment.
