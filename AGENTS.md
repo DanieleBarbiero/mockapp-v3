@@ -12,11 +12,14 @@ The project requires:
 
 ```text
 >=3.12,<3.13
-````
-
+```
 <!-- aggiunta mia -->
 
 ## Python interpreter enforcement
+
+### When running commands from Codex inside VS Code on Windows
+
+When running commands from Codex inside VS Code on Windows, do not rely on plain `python`.
 
 Before running any command that invokes Python, pip, pytest, or project tooling that depends on Python, inspect `.codex/config.toml`.
 
@@ -67,6 +70,10 @@ After any code change, run tests with:
 ```
 
 When reporting command results, mention which interpreter was used.
+
+### When running commands from Codex on the web / cloud (as is *NOT* from Codex inside VS Code on Windows)
+
+Rely on plain `python`, ignore the `.codex/config.toml` file, ignore the variable `PROJECT_PYTHON` under `[shell_environment_policy.set]` in the `.codex/config.toml` file.
 
 <!-- fine aggiunta -->
 
